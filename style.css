@@ -1,0 +1,189 @@
+/* webbasd post generator - Styles */
+:root{
+  --bg: #0b1324;
+  --panel: #0e1a33;
+  --text: #e9eefb;
+  --muted: #9fb3d1;
+  --accent: #4f7cff;
+}
+
+*{ box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(90vw 90vh at 10% 10%, #0b1a4a, #060a14);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Nastaliq Urdu", serif;
+}
+
+.app-header, .app-footer{
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  justify-content: space-between;
+  background: rgba(6,10,20,.6);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.app-footer{ border-top: 1px solid rgba(255,255,255,.06); border-bottom: none;}
+
+.app-header h1{
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: .3px;
+}
+.hint{ font-size: 12px; color: var(--muted); }
+
+.app{
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  padding: 16px;
+  min-height: calc(100vh - 96px);
+}
+
+.stage-wrap{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage{
+  width: 100%;
+  max-width: 860px;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1/1;
+  background: rgba(255,255,255,.03);
+  border: 1px dashed rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.card{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(145deg,#0b1a4a,#112e7a 40%,#a32020);
+}
+
+.card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: var(--bg-blur, blur(0px));
+  opacity: var(--bg-opacity, 1);
+  z-index: 0;
+}
+
+.poetry{
+  position: relative;
+  z-index: 1;
+  padding: var(--pad, 24px);
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-size: var(--fs, 36px);
+  line-height: var(--lh, 1.6);
+  color: var(--fc, #fff);
+  text-align: center;
+  text-shadow: var(--ts, 0 2px 18px rgba(0,0,0,.55));
+  white-space: pre-wrap;
+  outline: none;
+  direction: rtl;
+}
+
+.credit{
+  position: relative;
+  z-index: 1;
+  padding: 0 24px 18px;
+  color: var(--cc, #fff);
+  font-size: var(--cs, 18px);
+  text-align: end;
+  opacity: .95;
+  user-select: text;
+}
+
+.card.round{ border-radius: var(--radius, 24px); }
+.card.shadow{ box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+
+.controls{
+  background: rgba(6,10,20,.45);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  padding: 10px 12px;
+  height: fit-content;
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+.controls details{ margin-bottom: 10px; }
+.controls summary{
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+  padding: 6px 0;
+}
+.controls label{
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 8px 0;
+}
+.controls input[type="text"],
+.controls select,
+.controls input[type="color"],
+.controls input[type="range"],
+.controls button{
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  outline: none;
+}
+.controls input[type="range"]{ accent-color: var(--accent); cursor: pointer; }
+.controls button{
+  cursor: pointer;
+  transition: transform .06s ease, background .2s ease;
+}
+.controls button:hover{ transform: translateY(-1px); }
+
+.split{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.export-bar{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.export-bar button{
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor: pointer;
+}
+
+@media (max-width: 960px){
+  .app{
+    grid-template-columns: 1fr;
+  }
+  .controls{
+    order: -1;
+  }
+}

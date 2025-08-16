@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>webbasd post generator</title>
+
+  <!-- Google Fonts: Noto Nastaliq Urdu (reliable Urdu Nastaliq font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- App Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- html2canvas for export -->
+  <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <!-- App Script -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="app-header" dir="ltr">
+    <h1>webbasd post generator</h1>
+    <span class="hint">Create Urdu poetry posts with custom backgrounds</span>
+  </header>
+
+  <main class="app">
+    <section class="stage-wrap">
+      <div class="stage" id="stage" aria-label="Design Stage">
+        <div class="card" id="card">
+          <div class="poetry" id="poetry" contenteditable="true" spellcheck="false">
+            یہاں اپنی شاعری لکھیں…
+          </div>
+          <div class="credit" id="credit" contenteditable="true" spellcheck="false">— شاعر / Poet</div>
+        </div>
+      </div>
+
+      <div class="export-bar" dir="ltr">
+        <button id="btnExport">Download PNG</button>
+        <button id="btnShare">Share</button>
+        <button id="btnReset">Reset</button>
+      </div>
+    </section>
+
+    <aside class="controls" dir="ltr">
+      <details open>
+        <summary>Canvas</summary>
+        <label>Aspect Ratio
+          <select id="ratio">
+            <option value="1:1">Square 1:1</option>
+            <option value="4:5">Portrait 4:5 (Instagram)</option>
+            <option value="9:16">Story/Reel 9:16</option>
+            <option value="16:9">Landscape 16:9</option>
+          </select>
+        </label>
+        <label>Padding
+          <input type="range" id="padding" min="8" max="64" value="24" />
+        </label>
+        <label>Rounded Corners
+          <input type="range" id="radius" min="0" max="48" value="24" />
+        </label>
+        <label>Shadow
+          <input type="checkbox" id="shadow" checked />
+        </label>
+      </details>
+
+      <details open>
+        <summary>Background</summary>
+        <label>Preset Gradient
+          <select id="bgPreset">
+            <option value="linear-gradient(145deg,#0b1a4a,#112e7a 40%,#a32020)">Blue→Low Red (dark)</option>
+            <option value="linear-gradient(135deg,#0d47a1,#1976d2,#e53935)">Blue Mix + Red</option>
+            <option value="linear-gradient(135deg,#1e3c72,#2a5298)">Deep Blue</option>
+            <option value="linear-gradient(135deg,#c31432,#240b36)">Crimson / Plum</option>
+            <option value="linear-gradient(135deg,#16222A,#3A6073)">Blue Steel</option>
+            <option value="linear-gradient(135deg,#283c86,#45a247)">Blue / Green</option>
+          </select>
+        </label>
+        <label>Custom Gradient (CSS)
+          <input id="bgCss" type="text" placeholder="linear-gradient(135deg, #1a237e, #b71c1c)" />
+        </label>
+        <div class="split">
+          <label>Upload Image <input type="file" id="bgImage" accept="image/*" /></label>
+          <button id="clearBgImage">Remove Image</button>
+        </div>
+        <label>Background Opacity (for uploaded image)
+          <input type="range" id="bgOpacity" min="0" max="1" step="0.05" value="1" />
+        </label>
+        <label>Blur Background
+          <input type="range" id="bgBlur" min="0" max="12" step="1" value="0" />
+        </label>
+      </details>
+
+      <details open>
+        <summary>Poetry Text</summary>
+        <label>Font Family
+          <select id="fontFamily">
+            <option value="'Noto Nastaliq Urdu', serif">Noto Nastaliq Urdu</option>
+            <option value="serif">Serif (fallback)</option>
+          </select>
+        </label>
+        <label>Font Size
+          <input type="range" id="fontSize" min="18" max="72" value="36" />
+        </label>
+        <label>Line Height
+          <input type="range" id="lineHeight" min="1.0" max="2.0" step="0.05" value="1.6" />
+        </label>
+        <label>Text Color
+          <input type="color" id="textColor" value="#ffffff" />
+        </label>
+        <label>Center Text
+          <input type="checkbox" id="centerText" checked />
+        </label>
+        <label class="split">
+          <span>Text Shadow</span>
+          <input type="checkbox" id="textShadow" checked />
+        </label>
+      </details>
+
+      <details>
+        <summary>Credit / Watermark</summary>
+        <label>Show Credit
+          <input type="checkbox" id="creditToggle" checked />
+        </label>
+        <label>Credit Size
+          <input type="range" id="creditSize" min="12" max="28" value="18" />
+        </label>
+        <label>Credit Color
+          <input type="color" id="creditColor" value="#ffffff" />
+        </label>
+        <label>Credit Align
+          <select id="creditAlign">
+            <option value="end">Right</option>
+            <option value="center">Center</option>
+            <option value="start">Left</option>
+          </select>
+        </label>
+      </details>
+
+      <details>
+        <summary>Save</summary>
+        <button id="btnSave">Save Design (Local)</button>
+        <button id="btnLoad">Load Last</button>
+      </details>
+    </aside>
+  </main>
+
+  <footer class="app-footer" dir="ltr">
+    <span>Tip: Paste poetry directly, it supports RTL and Nastaliq shaping.</span>
+  </footer>
+</body>
+</html>
