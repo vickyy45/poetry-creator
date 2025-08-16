@@ -1,0 +1,66 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background Gradient */
+body {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  line-height: 1.8;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #c31432, #240b36);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+  padding: 40px;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* About Container */
+.about-container {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Headings */
+.about-container h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffd369;
+}
+
+.about-container h2 {
+  font-size: 1.8rem;
+  margin: 20px 0 10px;
+  color: #00adb5;
+}
+
+/* Paragraphs */
+.about-container p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #f9f9f9;
+}
+
+/* Lists */
+.about-container ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-container li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
