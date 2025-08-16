@@ -1,0 +1,117 @@
+/* blog.css - scoped styles for the blog page only */
+.wb-blog {
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 18px;
+  font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #222;
+  direction: rtl;
+}
+
+.wb-blog__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wb-blog__header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #0b3d91;
+}
+
+.wb-blog__sub {
+  margin-top: 6px;
+  color: #556;
+  font-size: 0.95rem;
+}
+
+.wb-blog__list {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+/* Post card */
+.wb-post {
+  background: #fff;
+  border: 1px solid #e6e9ef;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.wb-post__link {
+  display: block;
+  padding: 14px 16px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.wb-post__title {
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+  color: #13294b;
+}
+
+.wb-post__meta {
+  margin: 0 0 10px 0;
+  color: #7a8796;
+  font-size: 0.85rem;
+}
+
+.wb-post__excerpt {
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
+/* hover */
+.wb-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(18, 38, 74, 0.08);
+}
+
+/* CTA / sidebar-like section (stacked on small screens) */
+.wb-blog__cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.wb-btn {
+  background: linear-gradient(120deg, #0b66d0, #00b0d6);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(11,102,208,0.12);
+}
+
+.wb-link {
+  color: #0b66d0;
+  align-self: center;
+  text-decoration: none;
+  padding: 10px 6px;
+}
+
+/* Footer */
+.wb-blog__footer {
+  text-align: center;
+  margin-top: 26px;
+  color: #667;
+  font-size: 0.9rem;
+}
+
+/* Responsive: keep posts readable on small screens */
+@media (max-width: 640px) {
+  .wb-blog {
+    margin: 20px;
+    padding: 14px;
+  }
+  .wb-post__title { font-size: 1rem; }
+  .wb-post__excerpt { font-size: 0.95rem; }
+}
