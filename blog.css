@@ -1,4 +1,8 @@
 /* blog.css - scoped styles for the blog page only */
+body {
+  background: yellow !important;
+}
+
 .wb-blog {
   max-width: 900px;
   margin: 36px auto;
