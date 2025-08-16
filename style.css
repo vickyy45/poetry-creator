@@ -187,29 +187,31 @@ html, body {
     order: -1;
   }
 }
-/* ===== Footer Section (Updated) ===== */
+/* ===== Footer Section (Full width dark background) ===== */
 .site-footer {
-  background-color: #222;        /* Dark background */
-  color: #eee;                   /* Light text */
-  padding: 25px 20px;
+  background-color: #1a1a1a;     /* Dark background */
+  color: #f1f1f1;                /* Light text */
+  padding: 30px 20px;
   text-align: center;
   font-family: Arial, sans-serif;
+  width: 100%;
+  margin-top: 40px;              /* space from content above */
 }
 
 .footer-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 12px;
-  color: #ffcc70;                /* Beautiful warm color */
+  margin-bottom: 15px;
+  color: #ffcc70;                /* Warm heading color */
 }
 
 .footer-links {
   list-style: none;
   padding: 0;
-  margin: 10px 0 15px 0;
+  margin: 0 0 15px 0;
   display: flex;
   justify-content: center;
-  gap: 25px;                     /* Space between links */
+  gap: 30px;                     /* Space between links */
 }
 
 .footer-links li {
@@ -217,21 +219,22 @@ html, body {
 }
 
 .footer-links a {
-  color: #00c4cc;                /* Bright cyan */
+  color: #00c4cc;                /* Cyan link color */
   text-decoration: none;         /* Remove underline */
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #ffcc70;                /* On hover change to warm yellow */
+  color: #ffcc70;                /* Hover color */
   cursor: pointer;
 }
 
 .footer-copy {
   font-size: 0.9rem;
-  margin-top: 10px;
-  color: #aaa;
+  margin-top: 12px;
+  color: #bbb;
 }
+
 
 
