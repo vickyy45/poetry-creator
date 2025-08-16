@@ -187,35 +187,29 @@ html, body {
     order: -1;
   }
 }
-/* ===== Footer Section ===== */
+/* ===== Footer Section (Updated) ===== */
 .site-footer {
-  background-color: #1e1e2f;
-  color: #ddd;
-  padding: 30px 20px;
+  background-color: #222;        /* Dark background */
+  color: #eee;                   /* Light text */
+  padding: 25px 20px;
   text-align: center;
   font-family: Arial, sans-serif;
-  border-top: 2px solid #333;
-}
-
-.footer-container {
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .footer-title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #ffd369;
+  margin-bottom: 12px;
+  color: #ffcc70;                /* Beautiful warm color */
 }
 
 .footer-links {
   list-style: none;
   padding: 0;
-  margin: 15px 0;
+  margin: 10px 0 15px 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;                     /* Space between links */
 }
 
 .footer-links li {
@@ -223,18 +217,21 @@ html, body {
 }
 
 .footer-links a {
-  color: #00adb5;
-  text-decoration: none;
+  color: #00c4cc;                /* Bright cyan */
+  text-decoration: none;         /* Remove underline */
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #ffd369;
+  color: #ffcc70;                /* On hover change to warm yellow */
+  cursor: pointer;
 }
 
 .footer-copy {
-  margin-top: 15px;
   font-size: 0.9rem;
+  margin-top: 10px;
   color: #aaa;
 }
+
 
