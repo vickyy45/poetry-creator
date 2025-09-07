@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
+google.com, pub-9974462512288891, DIRECT, f08c47fec0942fa0
 Sitemap: https://poetrypostscreator.netlify.app/sitemap.xml
